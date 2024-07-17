@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vs Code</title>
+    <link rel="stylesheet" href="../stylesheets/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <div class="left">
+        <div class="folders">
+          <h4>Some Folder</h4>
+          <div class="foldericons">
+            <i class="ri-file-line"></i>
+            <i class="ri-folder-add-line"></i>
+            <a href="/"> <i class="ri-refresh-line"></i></a>
+            <i class="ri-file-copy-line"></i>
+          </div>
+        </div>
+
+        <div class="form fileform">
+          <form action="/filebanao">
+            <input type="text" name="filekanaam" placeholder="files" />
+          </form>
+        </div>
+
+        <div class="form folderform">
+          <form action="/folderbanao">
+            <input type="text" name="folderkanaam" placeholder="folder" />
+          </form>
+        </div>
+
+        <div class="files">
+          <% data.forEach(function(eachfileorfolder){ %>
+
+          <div class="file">
+            <a class="next" href="/write/<%=eachfileorfolder.name%>" >
+              <% if(eachfileorfolder.isDirectory()){ %>
+              <i class="ri-folder-fill"></i>
+              <% } else{ %>
+              <i class="ri-file-fill"></i>
+              <% } %> <%= eachfileorfolder.name %>
+              </a>
+            <div class="fileicons">
+              
+              <i class="ri-pencil-line" class="editbutton "></i>
+              <% if(eachfileorfolder.isDirectory()){ %>
+              <a id="del" href="/deleteThisFolder/<%= eachfileorfolder.name %>"
+                ><i  class="ri-delete-bin-fill"></i
+              ></a>
+
+              <% } else{ %>
+              <a id="del" href="/deleteThisFile/<%= eachfileorfolder.name %>"
+                ><i  class="ri-delete-bin-fill"></i
+              ></a>
+
+              <% } %>
+            </div>
+          </div>
+
+          <% }) %>
+        </div>
+      </div>
+      <div class="right">
+      
+      </div>
+
+      <div class="overlaymain">
+        <div class="popup">
+          <form action="">
+            <input type="text" placeholder="Rename">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="../javascripts/script.js"></script>
+  </body>
+</html>

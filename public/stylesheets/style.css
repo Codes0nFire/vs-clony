@@ -1,0 +1,205 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "gilroy";
+}
+
+html,body{
+  width: 100%;
+  height: 100%;
+}
+
+.main{
+  width:100vw;
+  height: 100vh;
+  display: flex;
+ 
+}
+.left{
+  width: 25%;
+  height:100%;
+  background-color:black;
+}
+.folders{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  font-size: 20px;
+  background-color: rgb(49, 49, 49);
+  color: white;
+  margin-bottom: 20px;
+
+}
+.foldericons{
+  display: flex;
+  gap: 15px;
+  cursor: pointer;
+}
+.ri-refresh-line{
+  text-decoration: none;
+  color: white;
+  
+}
+.file{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: black;
+  color: white;
+}
+
+.file>a{
+  color: white;
+  text-decoration:none;
+}
+.file:hover{
+  background-color:white;
+  color:black;
+}
+
+.file:hover .next{
+  color: black;
+}
+
+
+.fileicons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  opacity: 0;
+}
+.file:hover .fileicons{
+  opacity: 1;
+  
+}
+
+
+
+.fileform{
+  width: 100%;
+  display: none;
+
+}
+.fileform>form>input{
+  width: 65%;
+  padding: 10px;
+  
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+  font-size: 25px;
+  
+}
+
+
+
+.folderform{
+  width: 100%;
+  display: none;
+
+}
+.folderform>form>input{
+  width: 65%;
+  padding: 10px;
+  
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+  font-size: 25px;
+  
+}
+#del{
+  text-decoration:none;
+  color: black;
+}
+
+.right{
+  width: 75%;
+  height: 100%;
+  background-color:black;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  color: white;
+padding-left: 20px;
+}
+.right>h1{
+  opacity: 0.2;
+  font-size: 50px;
+}
+
+.right>nav{
+  width: 30%;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: black;
+  background-color: white;
+  margin: auto;
+}
+.right>nav>h1{
+  font-size: 20px;
+}
+
+.overlaymain{
+  width: 100%;
+  height: 100%;
+  
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.271);
+  display: none;
+}
+
+
+.popup{
+  width: 300px;
+  height: 300px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popup>form>input{
+  padding: 10px;
+  
+  font-size: 20px;
+  font-weight: 600;
+  outline-color: blue;
+}
+
+
+.ri-close-circle-fill{
+  font-size: 30px;
+  text-decoration: none;
+  background-color: white;
+}
+
+
+.text{
+  width: 100%;
+  height:85vh;
+  display: block;
+  background-color: black;
+  border: none;
+  outline: none;
+  font-size:1vw;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.submit{
+  padding:10px;
+  margin-top: 10px;
+  color: black;
+  background-color: white;
+  border-radius: 4px;
+}
