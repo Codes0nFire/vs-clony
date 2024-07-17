@@ -16,7 +16,7 @@
           <div class="foldericons">
             <i class="ri-file-line"></i>
             <i class="ri-folder-add-line"></i>
-            <a href="/"> <i class="ri-refresh-line"></i></a>
+            <a style="text-decoration: none;" href="/"> <i  class="ri-refresh-line"></i></a>
             <i class="ri-file-copy-line"></i>
           </div>
         </div>
@@ -37,13 +37,13 @@
           <% data.forEach(function(eachfileorfolder){ %>
 
           <div class="file">
-            <a class="next" href="/write/<%=eachfileorfolder.name%>" >
+            <h4  >
               <% if(eachfileorfolder.isDirectory()){ %>
-              <i class="ri-folder-fill"></i>
+              <i class="ri-folder-fill"></i> <%= eachfileorfolder.name %>
               <% } else{ %>
-              <i class="ri-file-fill"></i>
-              <% } %> <%= eachfileorfolder.name %>
-              </a>
+              <a class="next" href="/write/<%=eachfileorfolder.name%>">  <i class="ri-file-fill"></i> <%= eachfileorfolder.name %></a>
+              <% } %> 
+              </h4>
             <div class="fileicons">
               
               <i class="ri-pencil-line" class="editbutton "></i>
