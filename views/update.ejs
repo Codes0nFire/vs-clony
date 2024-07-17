@@ -48,7 +48,7 @@
               
              
               <% if(eachfileorfolder.isDirectory()){ %>
-              <a class="edit" href="/editThisFile/<%= eachfileorfolder.name %>">
+              <a class="edit" href="/editThisFolder/<%= eachfileorfolder.name %>">
                 <i class="ri-pencil-line" class="editbutton "  ></i>
               </a>
               <a id="del" href="/deleteThisFolder/<%= eachfileorfolder.name %>"
@@ -75,10 +75,10 @@
       
       </div>
 
-      <div class="overlaymain">
+      <div class="overlaymain" style="display: flex;" >
         <div class="popup">
-          <form action="">
-            <input type="text" value="">
+          <form action="/update/<%= name %>" method="post">
+            <input type="text" name="updatedname" value="<%= name  %>">
             <input type="submit" value="update">
           </form>
         </div>

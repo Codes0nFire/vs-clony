@@ -19,7 +19,7 @@ router.get("/", function (req, res, next) {
 });
 
 
-//create file
+//create file  
 router.get("/filebanao", function (req, res, next) {
   fs.writeFile(`./files/${req.query.filekanaam}`, "", (err) => {
     if (err) {
@@ -33,6 +33,7 @@ router.get("/filebanao", function (req, res, next) {
 
 
 //create folder
+
 router.get("/folderbanao", function (req, res, next) {
   fs.mkdir(`./files/${req.query.folderkanaam}`, (err) => {
     if (err) {
@@ -74,6 +75,47 @@ router.get("/deleteThisFolder/:filename", (req, res) => {
   res.redirect("back");
  
 });
+
+
+
+//edit 
+
+router.get("/editThisFile/:filename", (req, res) => {
+
+  fs.readdir("./files", { withFileTypes: true }, (err, data) => {
+    if (err) {
+      console.log("err");
+    }
+  
+    res.render("update",{name:req.params.filename,data});
+
+    
+  });
+
+ 
+});
+
+
+
+
+//update
+router.post("/update/:filename", (req, res) => {
+
+
+  
+  fs.rename(`./files/${req.params.filename}`, `./files/${req.body.updatedname}`, (err) => {
+    if (err) throw err;
+     res.redirect("/");
+  }); 
+    
+    
+ 
+});
+
+
+
+
+
 
 
 
