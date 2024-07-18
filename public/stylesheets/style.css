@@ -1,27 +1,27 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "gilroy";
 }
 
-html,body{
+html,
+body {
   width: 100%;
   height: 100%;
 }
 
-.main{
-  width:100vw;
+.main {
+  width: 100vw;
   height: 100vh;
   display: flex;
- 
 }
-.left{
+.left {
   width: 25%;
-  height:100%;
-  background-color:black;
+  height: 100%;
+  background-color: black;
 }
-.folders{
+.folders {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -30,19 +30,17 @@ html,body{
   background-color: rgb(49, 49, 49);
   color: white;
   margin-bottom: 20px;
-
 }
-.foldericons{
+.foldericons {
   display: flex;
   gap: 15px;
   cursor: pointer;
 }
-.ri-refresh-line{
+.ri-refresh-line {
   text-decoration: none;
   color: white;
-  
 }
-.file{
+.file {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -52,88 +50,79 @@ html,body{
   color: white;
 }
 
-.next{
+.next {
   color: white;
-  text-decoration:none;
+  text-decoration: none;
 }
-.file:hover{
-  background-color:white;
-  color:black;
-}
-
-.file:hover .next{
+.file:hover {
+  background-color: white;
   color: black;
 }
 
+.file:hover .next {
+  color: black;
+}
 
-.fileicons{
+.fileicons {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 15px;
   opacity: 0;
 }
-.file:hover .fileicons{
+.file:hover .fileicons {
   opacity: 1;
-  
 }
 
-
-
-.fileform{
+.fileform {
   width: 100%;
   display: none;
-
 }
-.fileform>form>input{
-  width: 65%;
+.fileform > form > input {
+  width: 75%;
   padding: 10px;
-  
-  border: 1px solid white;
+
+  border: 1px solid rgba(255, 255, 255, 0.265);
   background-color: black;
   color: white;
   font-size: 25px;
-  
 }
 
-
-
-.folderform{
+.folderform {
   width: 100%;
   display: none;
-
 }
-.folderform>form>input{
-  width: 65%;
+.folderform > form > input {
+  width: 75%;
   padding: 10px;
-  
-  border: 1px solid white;
+
+  border: 1px solid rgba(255, 255, 255, 0.265);
   background-color: black;
   color: white;
   font-size: 25px;
-  
 }
-#del{
-  text-decoration:none;
+#del {
+  text-decoration: none;
   color: black;
 }
 
-.right{
+.right {
   width: 75%;
   height: 100%;
-  background-color:black;
+  /* background-color:black; */
+  background-color: rgb(45, 45, 45);
   /* display: flex;
   align-items: center;
   justify-content: center; */
   color: white;
-padding-left: 20px;
+  padding-left: 20px;
 }
-.right>h1{
+.right > h1 {
   opacity: 0.2;
   font-size: 50px;
 }
 
-.right>nav{
+.right > nav {
   width: 30%;
   padding: 16px;
   display: flex;
@@ -143,14 +132,14 @@ padding-left: 20px;
   background-color: white;
   margin: auto;
 }
-.right>nav>h1{
+.right > nav > h1 {
   font-size: 20px;
 }
 
-.overlaymain{
+.overlaymain {
   width: 100%;
   height: 100%;
-  
+
   position: absolute;
   display: flex;
   align-items: center;
@@ -159,55 +148,54 @@ padding-left: 20px;
   display: none;
 }
 
-
-.popup{
+.popup {
   width: 15vw;
   height: 15vh;
-  background-color:black;
+  background-color: black;
   display: flex;
   align-items: center;
   justify-content: center;
-   border-radius: 10px;
+  border-radius: 10px;
 }
-.popup>form>input{
+.popup > form > input {
   padding: 10px;
-  
+
   font-size: 14px;
   font-weight: 600;
   border: none;
   outline: none;
 }
 
-
-.ri-close-circle-fill{
+.ri-close-circle-fill {
   font-size: 30px;
   text-decoration: none;
   background-color: white;
 }
 
-
-.text{
+.text {
   width: 100%;
-  height:85vh;
+  height: 80vh;
+
   display: block;
-  background-color: black;
+  background-color: rgb(45, 45, 45);
   border: none;
   outline: none;
-  font-size:1vw;
+  font-size: 1vw;
   color: white;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  resize: none;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.submit{
-  padding:10px;
+.submit {
+  padding: 10px;
   margin-top: 10px;
   color: black;
   background-color: white;
   border-radius: 4px;
 }
 
-
-.edit{
+.edit {
   text-decoration: none;
   color: black;
 }

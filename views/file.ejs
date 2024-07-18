@@ -16,20 +16,30 @@
           <div class="foldericons">
             <i class="ri-file-line"></i>
             <i class="ri-folder-add-line"></i>
-            <a style="text-decoration: none;" href="/"> <i  class="ri-refresh-line"></i></a>
+            <a style="text-decoration: none" href="/">
+              <i class="ri-refresh-line"></i
+            ></a>
             <i class="ri-file-copy-line"></i>
           </div>
         </div>
 
         <div class="form fileform">
           <form action="/filebanao">
-            <input type="text" name="filekanaam" placeholder="files" />
+            <input
+              type="text"
+              name="filekanaam"
+              placeholder="enter file name"
+            />
           </form>
         </div>
 
         <div class="form folderform">
           <form action="/folderbanao">
-            <input type="text" name="folderkanaam" placeholder="folder" />
+            <input
+              type="text"
+              name="folderkanaam"
+              placeholder="enter folder name"
+            />
           </form>
         </div>
 
@@ -37,56 +47,38 @@
           <% data.forEach(function(eachfileorfolder){ %>
 
           <div class="file">
-            <h4  >
-                <% if(eachfileorfolder.isDirectory()){ %>
-                <i class="ri-folder-fill"></i> <%= eachfileorfolder.name %>
-                <% } else{ %>
-                <a class="next" href="/write/<%=eachfileorfolder.name%>">  <i class="ri-file-fill"></i> <%= eachfileorfolder.name %></a>
-                <% } %> 
-                </h4>
-            <div class="fileicons">
-              
-              <i class="ri-pencil-line" class="editbutton "></i>
+            <h4>
               <% if(eachfileorfolder.isDirectory()){ %>
-              <a id="del" href="/deleteThisFolder/<%= eachfileorfolder.name %>"
-                ><i  class="ri-delete-bin-fill"></i
-              ></a>
-
-              <% } else{ %>
-              <a id="del" href="/deleteThisFile/<%= eachfileorfolder.name %>"
-                ><i  class="ri-delete-bin-fill"></i
-              ></a>
-
+              <i class="ri-folder-fill"></i> <%= eachfileorfolder.name %> <% }
+              else{ %>
+              <a class="next" href="/write/<%=eachfileorfolder.name%>">
+                <i class="ri-file-fill"></i> <%= eachfileorfolder.name %></a
+              >
               <% } %>
-            </div>
+            </h4>
           </div>
 
           <% }) %>
         </div>
       </div>
-      <div  class="right">
+      <div class="right">
+        <nav>
+          <h1><%= filename %></h1>
 
-        <nav><h1><%= filename  %> </h1>
-            
           <a class="ri-close-circle-fill" href="/"></a>
-         </nav>
+        </nav>
 
-         <form action="/save/<%=filename %>" method="post" >
-           <textarea class="text" name="text"   >
+        <form action="/save/<%=filename %>" method="post">
+          <textarea class="text" name="text"><%= textdata %></textarea>
 
-            <%= textdata %>
-          
-           </textarea>
-
-            <input class="submit" type="submit" value="Save File"  >
-         </form>
-        
+          <input class="submit" type="submit" value="Save File" />
+        </form>
       </div>
 
       <div class="overlaymain">
         <div class="popup">
           <form action="">
-            <input type="text" placeholder="Rename">
+            <input type="text" placeholder="Rename" />
           </form>
         </div>
       </div>

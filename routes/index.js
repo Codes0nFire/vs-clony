@@ -18,8 +18,7 @@ router.get("/", function (req, res, next) {
   });
 });
 
-
-//create file  
+//create file
 router.get("/filebanao", function (req, res, next) {
   fs.writeFile(`./files/${req.query.filekanaam}`, "", (err) => {
     if (err) {
@@ -30,7 +29,6 @@ router.get("/filebanao", function (req, res, next) {
   });
   res.redirect("back");
 });
-
 
 //create folder
 
@@ -45,133 +43,84 @@ router.get("/folderbanao", function (req, res, next) {
   res.redirect("back");
 });
 
-
-
 //delete file
 router.get("/deleteThisFile/:filename", (req, res) => {
   fs.unlink(`./files/${req.params.filename}`, (err) => {
     if (err) {
-      console.log(err,"err");
+      console.log(err, "err");
     } else {
       console.log("delete hogya");
     }
-   
   });
   res.redirect("back");
- 
 });
-
 
 //delete folder
 router.get("/deleteThisFolder/:filename", (req, res) => {
   fs.rmdir(`./files/${req.params.filename}`, (err) => {
     if (err) {
-      console.log(err,"err");
+      console.log(err, "err");
     } else {
       console.log("delete hogya");
     }
-   
   });
   res.redirect("back");
- 
 });
 
-
-
-//edit 
+//edit
 
 router.get("/editThisFile/:filename", (req, res) => {
-
   fs.readdir("./files", { withFileTypes: true }, (err, data) => {
     if (err) {
       console.log("err");
     }
-  
-    res.render("update",{name:req.params.filename,data});
 
-    
+    res.render("update", { name: req.params.filename, data });
   });
-
- 
 });
-
-
-
 
 //update
 router.post("/update/:filename", (req, res) => {
-
-
-  
-  fs.rename(`./files/${req.params.filename}`, `./files/${req.body.updatedname}`, (err) => {
-    if (err) throw err;
-     res.redirect("/");
-  }); 
-    
-    
- 
+  fs.rename(
+    `./files/${req.params.filename}`,
+    `./files/${req.body.updatedname}`,
+    (err) => {
+      if (err) throw err;
+      res.redirect("/");
+    }
+  );
 });
 
-
-
-
-
-
-
-
-
-
-
 router.get("/write/:filename", (req, res) => {
-
-
-
-
   fs.readdir("./files", { withFileTypes: true }, (err, data) => {
     if (err) {
       console.log("err");
     }
 
-    fs.readFile(`./files/${req.params.filename}`, function read(err, info) {
-      if (err) {
+    fs.readFile(
+      `./files/${req.params.filename}`,
+      "utf8",
+      function read(err, info) {
+        if (err) {
           throw err;
+        }
+        res.render("file", {
+          data,
+          filename: req.params.filename,
+          textdata: info,
+        });
       }
-      
-     let textdata=info.toString()
-      
-      res.render("file",{data,filename:req.params.filename,textdata});
+    );
   });
-
-
-    
-   
-  });
-
-  
-
 });
 
-
-
-
-
-
-
 router.post("/save/:filename", (req, res) => {
-
-  fs.writeFile(`./files/${req.params.filename}`, `${req.body.text}` , function(err) {
-    if(err) {
-        return console.log(err);
+  fs.writeFile(`./files/${req.params.filename}`, req.body.text, function (err) {
+    if (err) {
+      return console.log(err);
     }
-
-
-    
-    
     res.redirect("back");
-}); 
-
-
-
+  });
 });
 
 module.exports = router;
