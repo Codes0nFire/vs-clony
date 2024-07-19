@@ -8,7 +8,7 @@ function filefolderbanao() {
 
   var close = () => {
     document.querySelectorAll(".form").forEach((form) => {
-      console.log(form);
+      // console.log(form);
       form.style.display = "none";
     });
   };
@@ -50,6 +50,6 @@ var popup = document.querySelector(".overlaymain");
 editbutton.forEach((button) => {
   button.addEventListener("click", () => {
     popup.style.display = "flex";
-    console.log("Hua");
+    // console.log("Hua");
   });
 });

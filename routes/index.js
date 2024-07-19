@@ -24,7 +24,7 @@ router.get("/filebanao", function (req, res, next) {
     if (err) {
       throw err;
     } else {
-      console.log("kaam hogya bhi ji apki file ban gyi hai");
+      console.log("file ready");
     }
   });
   res.redirect("back");
@@ -37,7 +37,7 @@ router.get("/folderbanao", function (req, res, next) {
     if (err) {
       throw err;
     } else {
-      console.log("kaam hogya bhi ji apki folder ban gyi hai");
+      console.log("folder ready");
     }
   });
   res.redirect("back");
